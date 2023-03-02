@@ -56,6 +56,33 @@
 # my_color_eyes = "brown"
 # print(f"I'm {my_name}, my age is {my_age}, my eyes color is {my_color_eyes}")
 
-# input 함수/ type 함수
-age = input("How old are you?")
-print("user answer", age)
+# # input 함수/ type 함수
+# age = input("How old are you?")
+# print("user answer", age)
+
+
+# library
+# random 모듈에서 randint 함수를  import해줘
+from random import randint
+
+pc_chioce = randint(1, 100)
+playing = True
+
+while playing:
+    user_choice = int(input("choose number(1-100):"))
+    if user_choice == pc_chioce:
+        print("you win")
+        playing = False
+    elif user_choice > pc_chioce:
+        print("Lower!")
+    elif user_choice < pc_chioce:
+        print("higher!")
+
+# data structures
+# list
+days_of_week = ["Mon", "Tue", "Wed", "Thur", "Fri"]
+# function vs methods: tring/number등의 데이터에대한 funtion
+name = "nick"
+print(name.upper())
+# list에대한 method
+print(days_of_week.count("Wed"))
