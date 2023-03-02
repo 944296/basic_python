@@ -60,7 +60,7 @@
 # age = input("How old are you?")
 # print("user answer", age)
 
-
+'''
 # library
 # random 모듈에서 randint 함수를  import해줘
 from random import randint
@@ -77,12 +77,22 @@ while playing:
         print("Lower!")
     elif user_choice < pc_chioce:
         print("higher!")
+'''
 
 # data structures
-# list
+# 1.list
 days_of_week = ["Mon", "Tue", "Wed", "Thur", "Fri"]
 # function vs methods: tring/number등의 데이터에대한 funtion
 name = "nick"
 print(name.upper())
 # list에대한 method
 print(days_of_week.count("Wed"))
+days_of_week.reverse()
+days_of_week.append("Sat")
+print(days_of_week)
+# 인덱스로 가져오기
+print(days_of_week[0])
+
+# 2.tuple(불변)
+days = ("Mon", "Tue", "Wed", "Thur", "Fri")
+print(days[-1])
