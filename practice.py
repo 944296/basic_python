@@ -1,3 +1,5 @@
+from requests import get
+
 # # variables
 # a = 2  # 0x0001
 # b = 3  # 0x0002
@@ -80,7 +82,7 @@ while playing:
 '''
 
 # data structures
-# 1.list
+# 1.list[]
 days_of_week = ["Mon", "Tue", "Wed", "Thur", "Fri"]
 # function vs methods: tring/number등의 데이터에대한 funtion
 name = "nick"
@@ -90,9 +92,41 @@ print(days_of_week.count("Wed"))
 days_of_week.reverse()
 days_of_week.append("Sat")
 print(days_of_week)
-# 인덱스로 가져오기
+# 인덱스로 특정 아이템에 접근
 print(days_of_week[0])
 
-# 2.tuple(불변)
+# 2.tuple(),(불변, immutable)=> method 별로 없음.
 days = ("Mon", "Tue", "Wed", "Thur", "Fri")
 print(days[-1])
+
+# 3.Dicts{key:value}
+player = {
+    "name": "nick",
+    "age": 12,
+    "alive": True,
+    "fav_food": ["🍕", "🍔"]
+}
+print(player.get("age"))
+print(player["fav_food"])
+print(player)
+player.pop("age")
+print(player)
+player["xp"] = 1500
+print(player)
+# list에 대한 method사용 가능
+player["fav_food"].append("🌭")
+print(player["fav_food"])
+
+# for(loop)
+websites = ["google.com", "https://twitter.com",
+            "facebook.com", "https://tiktok.com"]
+results = {}
+for website in websites:
+    if not website.startswith("https://"):
+        website = f"https://{website}"  # string안에 변수 넣는법
+    response = get(website)  # requests module 설치!!!
+    if response.status_code == 200:
+        results[website] = "ok"
+    else:
+        results[website] = "failed"
+print(results)
