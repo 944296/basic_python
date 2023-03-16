@@ -1,0 +1,35 @@
+# 함수(function) & 매서드 (method)
+# 공통점 : 형태 동일
+# 차이점 : 이름다름, 사용범위
+#          누구나 사용 가능 => 함수
+#          특정 데이터 타입만 사용 가능 => 매서드
+#          특정 데이터 타입 객체변수명.매서드()
+#-------------------------------------------------
+#str 데이터 타입 전용 함수 즉 매서드
+msg = "good lucck!"
+
+# => 대문자 변환 매서드 upper()
+print(msg.upper(), msg)
+
+# => 이전 문자 = > 새로운 문자 변경 매서드 replace()
+print(msg.replace("cc","c"),msg)
+
+# => 문자열을 특정 기준으로 문자열 나누기 매서드 split()
+print(msg.split(),msg)
+
+# 재미있는 str 매서드 --------------------------------
+# 문자열의 첫부분 체크 후 결과 True/False => startswith()
+print(msg.startswith("go"))
+print(msg.startswith("@!"))
+
+#문자열의 끝부분 체크 후 결과 True/False => endswith()
+print(msg.endswith("!"))
+print(msg.endswith("@"))
+
+#입력받은 데이터가 숫자,문자인지 검사 후 결과 True/False
+#=> isxxx()
+print(msg, msg.isnumeric())
+print(msg, msg.isalpha())
+print("hello", "hello".isalpha())
+
+
